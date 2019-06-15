@@ -50,7 +50,7 @@ var i=0
 while(i<cart.length){
   if(cart[i].itemName===item){
     cart.splice(1,1)
-  }
+  } i+=1
 }
   return cart
 }

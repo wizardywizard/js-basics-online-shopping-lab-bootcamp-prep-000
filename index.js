@@ -56,7 +56,7 @@ while(i<cart.length){
 }
 
 function placeOrder(cardNumber) {
-  if(cardNumber===nil){
+  if(cardNumber===nul){
     return 'Sorry, we don\'t have a credit card on file for you.'
   }
 }

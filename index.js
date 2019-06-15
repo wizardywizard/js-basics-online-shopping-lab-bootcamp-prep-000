@@ -18,15 +18,41 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  // write your code here
+if (cart.length===0){
+  return 'Your shopping cart is empty.'
+} 
+if (cart.length===1){
+return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.`
+}
+var first='In your cart, you have'
+var second='and'
+for(let i=0;i<cart.length;i++){
+  if (i===cart.length-1) {
+    first+=` ${second} ${cart[i].itemName} at $${cart[i].itemPrice}`
+  }else{ first+=` ${cart[i].itemName} at $${cart[i].itemPrice},`
+  }
+}
+return first+='.'
 }
 
 function total() {
-  // write your code here
+  var total=0
+  var i=0
+  while(i<cart.length) {
+    total+=cart[i].itemPrice
+    i+=1
+  }
+return total
 }
 
 function removeFromCart(item) {
-  // write your code here
+var i=0
+while(i<cart.length){
+  if(cart[i].itemName===item){
+    cart.splice(1,1)
+  }
+}
+  return cart
 }
 
 function placeOrder(cardNumber) {
